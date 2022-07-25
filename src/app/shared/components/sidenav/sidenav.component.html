@@ -1,0 +1,5 @@
+<div class="sidenav flex flex-col min-h-screen p-5">
+    <mat-nav-list>
+        <a mat-list-item [routerLink]="item?.path" *ngFor="let item of navList"> {{ item?.name }} </a>
+    </mat-nav-list>
+</div>

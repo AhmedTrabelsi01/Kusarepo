@@ -1,0 +1,41 @@
+Hela Aouiti
+<div class="cintainer mt-5">
+  <h2 style="margin-top:100px ;">{{header}}</h2>
+</div>
+<div>
+  <form (ngSubmit)="onSubmit(f)" #f='ngForm'>
+    <div class="form-group">
+      <label for="">Id</label>
+      <input type="text" class="form-control" ngModel name="id"><br>
+    </div>
+
+    <div>
+      <label for="">Image</label>
+      <input type="file" class="form-control" ngModel name="image"><br>
+    </div>
+    <div>
+      <label for="">Name</label>
+      <input type="text" class="form-control" ngModel name="name"><br>
+    </div>
+    <div>
+      <label for="">Price</label>
+      <input type="text" class="form-control" ngModel name="price"><br>
+    </div>
+    <div>
+      <label for="">Rating</label>
+      <input type="text" class="form-control" ngModel name="rating"><br>
+    </div>
+    <div>
+      <label for="">Feedback</label>
+      <input type="text" class="form-control" ngModel name="feedback"><br>
+    </div>
+    <div>
+      <label for="">Category</label>
+      <input type="text" class="form-control" ngModel name="category"><br><br>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary"><a [routerLink]="['/products']">Add</a></button>
+    </div>
+
+  </form>
+</div>
