@@ -64,9 +64,12 @@
             </div>
           </mat-card-actions>
           <button style="color: red;font-size:30px" (click)="onDelete(product.id)">x</button>
+          <button style="background-color:rgb(173, 173, 189);padding: 10px;margin: 10px; border-radius: 9px;"
+            (click)="onEdit(product.id)"><a>Edit</a></button>
         </mat-card>
       </div>
-      <button style="background-color:blue;"><a routerLink="[addproject]">ADD</a></button>
+      <button style="background-color:rgb(187, 187, 228);padding: 10px;margin: 10px; border-radius: 9px;"><a
+          routerLink="/addproject">ADD</a></button>
     </div>
     <div *ngIf="!isLoaded">
       <ngx-skeleton-loader count="9" appearance="circle" [theme]="{ 

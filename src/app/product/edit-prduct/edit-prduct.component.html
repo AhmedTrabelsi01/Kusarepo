@@ -1,0 +1,37 @@
+<div>
+  <form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+    <label for="">Id</label>
+    <input type="text" class="form-control" ngModel name="id"><br>
+
+
+
+    <label for="">Image</label>
+    <input type="file" class="form-control" ngModel name="image"><br>
+
+
+    <label for="">Name</label>
+    <input type="text" class="form-control" ngModel name="name"><br>
+
+
+    <label for="">Price</label>
+    <input type="text" class="form-control" ngModel name="price"><br>
+
+
+    <label for="">Rating</label>
+    <input type="text" class="form-control" ngModel name="rating"><br>
+
+
+    <label for="">Feedback</label>
+    <input type="text" class="form-control" ngModel name="feedback"><br>
+
+
+    <label for="">Category</label>
+    <input type="text" class="form-control" ngModel name="category"><br><br>
+
+
+    <button type="submit" value="Send" id="add" class="btn btn-primary"><a>Add</a></button>
+
+
+  </form>
+</div>

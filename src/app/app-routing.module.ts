@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditComponent } from './edit/edit.component';
+import { AddPrductComponent } from './product/add-prduct/add-prduct.component';
+import { EditPrductComponent } from './product/edit-prduct/edit-prduct.component';
 import { BaseLayoutComponent } from './shared/components/layouts/base-layout/base-layout.component';
 
 const baseLayoutRouting: Routes = [
@@ -20,12 +21,7 @@ const baseLayoutRouting: Routes = [
     path: '',
     pathMatch: 'full',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-  },
-  {
-    path: 'products/addproject',
-    component: EditComponent
   }
-
 ];
 
 const routes: Routes = [
@@ -33,6 +29,15 @@ const routes: Routes = [
     path: '',
     component: BaseLayoutComponent,
     children: baseLayoutRouting
+  }
+  ,
+  {
+    path: 'addproject',
+    component: EditPrductComponent
+  },
+  {
+    path: 'editprduct',
+    component: AddPrductComponent
   }
 
 ];

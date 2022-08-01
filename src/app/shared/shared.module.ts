@@ -15,6 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const commonModules = [
   HttpClientModule,
@@ -24,7 +25,8 @@ const commonModules = [
   MatCardModule,
   MatProgressSpinnerModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({
@@ -32,4 +34,4 @@ const commonModules = [
   imports: [CommonModule, RouterModule, ...commonModules],
   exports: [HeaderComponent, FooterComponent, BaseLayoutComponent, FeatureComponent, LoaderComponent, SidenavComponent, ...commonModules]
 })
-export class SharedModule {}
+export class SharedModule { }

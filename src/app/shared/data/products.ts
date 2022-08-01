@@ -1,6 +1,5 @@
 import { Products } from "src/app/models/products";
 import { ProductDetailsComponent } from "src/app/product/product-details/product-details.component"
-
 export class productsDB {
     static Product = [
         {
@@ -102,6 +101,18 @@ export class productsDB {
     ]
     onAdd(produit: Products) {
         productsDB.Product.push(produit);
-        console.log(productsDB);
+    }
+    static onEdit(produit: Products, id) {
+        productsDB.Product.forEach(element => {
+            if (element.id === id) {
+                element.name = produit.name
+                element.category = produit.category
+                element.feedback = produit.feedback
+                element.images = produit.images
+                element.price = produit.price
+                element.rating = produit.rating
+            }
+        });
     }
 }
+

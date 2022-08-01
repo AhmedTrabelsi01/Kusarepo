@@ -1,0 +1,25 @@
+.container {
+  width: 50%;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.027);
+  padding: 50px;
+  border: solid 3px black;
+  border-radius: 20px;
+  display: grid;
+  column-gap: 10px;
+  grid-template-rows: 2fr 2fr;
+  &:nth-child(1) {
+    &:nth-child(1) {
+      grid-row: 1;
+    }
+  }
+}
+#add {
+  background-color: rgb(93, 93, 172);
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px rgb(114, 105, 243);
+  border-radius: 6px;
+  color: wheat;
+}

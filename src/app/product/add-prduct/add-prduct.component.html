@@ -1,0 +1,29 @@
+<div>
+  <form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+
+    <label className="_label" for="">Name</label>
+    <input className="_input" type="text" class="form-control" [(ngModel)]="prod.name" name="name"><br>
+    <label className="_label" for="">Image</label>
+    <input className="_input" type="file" class="form-control" [(ngModel)]="prod.image" name="image"><br>
+
+    <label className="_label" for="">Price</label>
+    <input className="_input" type="text" class="form-control" [(ngModel)]="prod.price" name="price"><br>
+
+    <label className="_label" for="">Rating</label>
+    <input className="_input" type="text" class="form-control" [(ngModel)]="prod.rating" name="rating"><br>
+
+    <label className="_label" for="">Feedback</label>
+    <input className="_input" type="text" class="form-control" [(ngModel)]="prod.feedback" name="feedback"><br>
+
+    <label className="_label" for="">Category</label>
+    <input className="_input" type="text" class="form-control" [(ngModel)]="prod.category" name="category"><br><br>
+    <label className="_label" for="">type</label>
+    <input className="_input" type="text" class="form-control" [(ngModel)]="prod.type" name="category"><br><br>
+
+
+    <button type="submit" id="edit" value="Send" class="btn btn-primary"><a>Edit</a></button>
+
+
+  </form>
+</div>
