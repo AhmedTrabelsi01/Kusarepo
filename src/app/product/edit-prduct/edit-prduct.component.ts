@@ -7,7 +7,7 @@ import { DataService } from 'src/app/shared/data/service/data.service';
 @Component({
   selector: 'app-edit-prduct',
   templateUrl: './edit-prduct.component.html',
-  styleUrls: ['./edit-prduct.component.scss']
+  styleUrls: ['./edit-prduct.component.scss']   
 })
 export class EditPrductComponent implements OnInit {
 

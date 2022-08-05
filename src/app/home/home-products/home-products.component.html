@@ -32,13 +32,16 @@
               <a [routerLink]="['/products', product.id]" mat-raised-button class="px-4 "
                 style="background-color: #F0F2A6;">Read
                 More</a>
-            </div>
+              </div>
+              <button class="px-5 py-2 mx-8 my-8 text-lg" mat-raised-button class="px-4 " style="background-color: red" (click)="onDelete(product.id)">Delete</button>
+              <button class="px-5 py-2 mx-8 my-8 text-lg" mat-raised-button class="px-4 " style="background-color:rgb(173, 173, 189);"
+                (click)="onEdit(product.id)"><a>Edit</a></button>
           </mat-card-actions>
         </mat-card>
       </div>
     </div>
     <div class="text-center mt-10">
-      <a mat-raised-button [routerLink]="['/products']" class="px-8 py-2 text-lg"
+      <a mat-raised-button [routerLink]="['/products']" class="px-8 py-2 text-lg" 
         style="background-color: #F0F2A6;">Browse More</a>
     </div>
   </div>

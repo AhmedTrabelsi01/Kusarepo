@@ -37,4 +37,23 @@ class ProductController extends Controller
         $product->delete($request->all());
         return response($product,200);
     }
+    public function file(Request $request){
+        $product=new Projects;
+        if($request->hasFile('images')){
+        $completeFileName=$request->file('images')->getClientOriginalName();
+        $fileNameOnly= pathinfo($completeFileName,PATHINFO_FILENAME);
+    $extenshion = $request->file('images')->getClientOriginalExtension();
+    $comPic = str_replace(' ','_',$fileNameOnly).'-'.rand().'_'.time(). '.'.$extenshion; 
+    $path = $request->file('images')->storeAs('public/posts',$comPic);
+    $product->image=$comPic;
+        }
+        if($product->save())
+        {
+            return['stasus'=>true,'message'=>'Image Saved Successfully a zebbi'];
+        }
+        else {
+            return['stasus'=>false,'message'=>'Something Went Wrong tnekna'];
+
+        }
+    }
 }

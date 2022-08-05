@@ -8,3 +8,10 @@ export class Products {
   category: string;
   type: string;
 }
+export class Contact {
+  name:string;
+  number:number;
+  email:string;
+  subject:string;
+  core:string;
+}

@@ -1,8 +1,9 @@
 <?php
-
+use App\Http\Controllers\CommentsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,19 @@ Route::put('updateProduct/{id}',[ProductController::class,'updateProduct']);
 
 //delete Product
 Route::delete('deleteProduct/{id}',[ProductController::class,'deleteProduct']);
+
+//get comments
+Route::get('comments',[CommentsController::class,'getComments']);
+
+//add comment
+Route::post('addComment',[CommentsController::class,'addComment']);
+
+//edit comment
+Route::put('updateComment/{id}',[CommentsController::class,'updateComment']);
+
+//delete comment
+Route::delete('deleteComment/{id}',[CommentsController::class,'deleteComment']);
+//add contact
+Route::post("addContact",[ContactsController::class,'addContact']);
+//file
+Route::post('products',[ProductController::class,'file']);
