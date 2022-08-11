@@ -5,7 +5,8 @@
     <label className="_label" for="">Name</label>
     <input className="_input" type="text" class="form-control" [(ngModel)]="prod.name" name="name"><br>
     <label className="_label" for="">Image</label>
-    <input className="_input" type="file" class="form-control" [(ngModel)]="prod.image" name="image"><br>
+    <input (click)="onClick()" type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple"
+      accept="image/*"><br>
 
     <label className="_label" for="">Price</label>
     <input className="_input" type="text" class="form-control" [(ngModel)]="prod.price" name="price"><br>
@@ -22,8 +23,9 @@
     <input className="_input" type="text" class="form-control" [(ngModel)]="prod.type" name="category"><br><br>
 
 
-    <button type="submit" id="edit" value="Send" class="btn btn-primary"><a>Edit</a></button>
+    <button type="submit" id="edit" value="Send" class="btn btn-primary"><a>save</a></button>
 
 
   </form>
+
 </div>

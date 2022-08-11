@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddPrductComponent } from './product/add-prduct/add-prduct.component';
 import { EditPrductComponent } from './product/edit-prduct/edit-prduct.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { BaseLayoutComponent } from './shared/components/layouts/base-layout/base-layout.component';
 
 const baseLayoutRouting: Routes = [
@@ -38,7 +39,11 @@ const routes: Routes = [
   {
     path: 'editprduct',
     component: AddPrductComponent
-  }
+  },
+  {
+    path: 'readmore/:id',
+    component: ProductDetailsComponent
+  },
 
 ];
 

@@ -9,9 +9,13 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { Products } from './models/products';
 import { productsDB } from './shared/data/products';
 import { NgForm } from '@angular/forms';
+import { AddPrductComponent } from './product/add-prduct/add-prduct.component';
+import { EditPrductComponent } from './product/edit-prduct/edit-prduct.component';
+
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent,],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, SharedModule, FormsModule, NgxSkeletonLoaderModule, ReactiveFormsModule],
+  declarations: [AppComponent, AddPrductComponent, EditPrductComponent],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, SharedModule, FormsModule, HttpClientModule, NgxSkeletonLoaderModule, ReactiveFormsModule],
   providers: [productsDB],
   bootstrap: [AppComponent],
 })

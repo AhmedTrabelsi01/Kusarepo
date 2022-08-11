@@ -1,37 +1,31 @@
 <div>
   <form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-    <label for="">Id</label>
-    <input type="text" class="form-control" ngModel name="id"><br>
+
+    <label className="_label" for="">Name</label>
+    <input className="_input" type="text" class="form-control" ngModel name="name"><br>
+    <label className="_label" for="">Image</label>
+    <input (change)="fileEvent($event)" type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple"
+      accept="image/*"><br>
+
+    <label className="_label" for="">Price</label>
+    <input className="_input" type="text" class="form-control" ngModel name="price"><br>
+
+    <label className="_label" for="">Rating</label>
+    <input className="_input" type="text" class="form-control" ngModel name="rating"><br>
+
+    <label className="_label" for="">Feedback</label>
+    <input className="_input" type="text" class="form-control" ngModel name="feedback"><br>
+
+    <label className="_label" for="">Category</label>
+    <input className="_input" type="text" class="form-control" ngModel name="category"><br><br>
+    <label className="_label" for="">type</label>
+    <input className="_input" type="text" class="form-control" ngModel name="category"><br><br>
 
 
-
-    <label for="">Image</label>
-    <input type="file" class="form-control" ngModel name="image"><br>
-
-
-    <label for="">Name</label>
-    <input type="text" class="form-control" ngModel name="name"><br>
-
-
-    <label for="">Price</label>
-    <input type="text" class="form-control" ngModel name="price"><br>
-
-
-    <label for="">Rating</label>
-    <input type="text" class="form-control" ngModel name="rating"><br>
-
-
-    <label for="">Feedback</label>
-    <input type="text" class="form-control" ngModel name="feedback"><br>
-
-
-    <label for="">Category</label>
-    <input type="text" class="form-control" ngModel name="category"><br><br>
-
-
-    <button type="submit" value="Send" id="add" class="btn btn-primary"><a>Add</a></button>
+    <button type="submit" id="edit" value="Send" class="btn btn-primary"><a>save</a></button>
 
 
   </form>
+
 </div>

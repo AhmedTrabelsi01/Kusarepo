@@ -1,6 +1,6 @@
 export class Products {
   id: number;
-  images: string;
+  images: any;
   name: string;
   price: number;
   rating: number;
@@ -9,9 +9,12 @@ export class Products {
   type: string;
 }
 export class Contact {
-  name:string;
-  number:number;
-  email:string;
-  subject:string;
-  core:string;
+  name: string;
+  email: string;
+  subject: string;
+  core: string;
+}
+export class Comment {
+  username: string;
+  comment: string;
 }

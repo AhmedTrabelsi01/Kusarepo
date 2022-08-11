@@ -16,7 +16,7 @@ import { AddPrductComponent } from './add-prduct/add-prduct.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [ProductListComponent, ProductDetailsComponent, ProductHeroComponent, EditPrductComponent, AddPrductComponent],
+  declarations: [ProductListComponent, ProductDetailsComponent, ProductHeroComponent],
   imports: [
     HttpClientModule,
     CommonModule,

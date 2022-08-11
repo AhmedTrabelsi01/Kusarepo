@@ -28,7 +28,7 @@ Route::get('products',[ProductController::class,'getProducts']);
 Route::get('product/{id}',[ProductController::class,'getProduct']);
 
 //Add Product
-Route::post('addProduct',[ProductController::class,'addProduct']);
+Route::post('addProduct',[ProductController::class,'addProduct'])->name('addProduct');
 
 //update Product
 Route::put('updateProduct/{id}',[ProductController::class,'updateProduct']);
@@ -49,5 +49,7 @@ Route::put('updateComment/{id}',[CommentsController::class,'updateComment']);
 Route::delete('deleteComment/{id}',[CommentsController::class,'deleteComment']);
 //add contact
 Route::post("addContact",[ContactsController::class,'addContact']);
+Route::get("contacts",[ContactsController::class,'getContacts']);
+
 //file
-Route::post('products',[ProductController::class,'file']);
+// Route::post('addProduct', [ProductController::class, 'uploadimage'])->name('imageUpload');

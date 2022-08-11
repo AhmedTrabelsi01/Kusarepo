@@ -10,4 +10,7 @@ class ContactsController extends Controller
         $contact= Contacts::create($request->all());
         return response($contact,201);
     }
+    public function getContacts(){
+        return response()->json(Contacts::all(),200);
+    }
 }

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  IMG_URL: 'http://localhost:8000'
 
 };
 

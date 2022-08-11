@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Projects;
@@ -19,7 +19,15 @@ class ProductController extends Controller
     }
     public function addProduct(Request $request){
         $product= Projects::create($request->all());
-        return response($product,201);
+        // dd($product->images);
+        if ($request->hasFile('images')){
+            $images=$request->file('images');
+            $name=$images->hashName();
+            $path=$images->store('public/Products',$name);
+            $url=Storage::url($name);
+            $product->images=$url;
+        }
+        return response([$url,$product],201);
     }
     public function updateProduct(Request $request,$id ){
         $product=Projects::find($id);
@@ -37,23 +45,22 @@ class ProductController extends Controller
         $product->delete($request->all());
         return response($product,200);
     }
-    public function file(Request $request){
-        $product=new Projects;
-        if($request->hasFile('images')){
-        $completeFileName=$request->file('images')->getClientOriginalName();
-        $fileNameOnly= pathinfo($completeFileName,PATHINFO_FILENAME);
-    $extenshion = $request->file('images')->getClientOriginalExtension();
-    $comPic = str_replace(' ','_',$fileNameOnly).'-'.rand().'_'.time(). '.'.$extenshion; 
-    $path = $request->file('images')->storeAs('public/posts',$comPic);
-    $product->image=$comPic;
+    public function uploadimage(Request $request)
+    {
+        $post=new Projects ;
+        if ($request->hasFile('image')){
+            $completeFileName=$request->file('image')->getClientOriginalName();
+            $fileNameOnly=pathinfo($completeFileName,PATHINFO_FILENAME);
+            $extension=$request->file('image')->getClientOriginalExtension();
+            $compPic=str_replace(' ','_',$fileNameOnly).'-'.rand().'_'.time().'.'.$extension;
+            $path=$request->file('image')->storeAs('public/Products',$compPic);
+            $post->images=$compPic;
         }
-        if($product->save())
-        {
-            return['stasus'=>true,'message'=>'Image Saved Successfully a zebbi'];
+        if($post->save()){
+            return ['status'=>true,'message'=>'sucess'];
+        }else{
+            return ['status'=>false,'message'=>'error'];
         }
-        else {
-            return['stasus'=>false,'message'=>'Something Went Wrong tnekna'];
 
-        }
     }
 }

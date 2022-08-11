@@ -88,79 +88,28 @@
         </div>
       </div>
       <div class="col-span-12 md:col-span-5 xl:col-span-4">
-        <div class="border">
-          <div class="border-b text-center pt-10 pb-10">
-            <div class="text-accent text-4xl font-semibold">€3,000.00</div>
-            <div class="font-medium text-lg mt-3 text-gray-400 tracking-wider">Price</div>
-          </div>
-          <div class="border-b p-5">
-            <ul class="service-info">
-              <li class="py-2 mr-2">
-                <div class="flex items-center">
-                  <mat-icon class="text-primary border-2 rounded-full w-6 h-6 text-center leading-5 mr-2">check
-                  </mat-icon>
-                  <strong class="mr-2 font-black">96</strong> interested persons
-                </div>
-              </li>
-              <li class="py-2 mr-2">
-                <div class="flex items-center">
-                  <mat-icon class="text-primary border-2 rounded-full w-6 h-6 text-center leading-5 mr-2">check
-                  </mat-icon>
-                  <strong class="mr-2 font-black">1 hours</strong> reaction time
-                </div>
-              </li>
-              <li class="py-2 mr-2">
-                <div class="flex items-center">
-                  <mat-icon class="text-primary border-2 rounded-full w-6 h-6 text-center leading-5 mr-2">check
-                  </mat-icon>
-                  <strong class="mr-2 font-black">12 hours</strong> delivery time
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="border-b p-5">
-            <h5>Addons Services</h5>
-            <div class="flex mt-2">
-              <div class="sm:pt-1 mr-3 sm:mr-6 md:mr-8">
-                <input type="checkbox"
-                  class="appearance-none border border-gray-300 checked:bg-gray-400 checked:border-transparent ..." />
-              </div>
-              <div class="flex-grow">
-                <div class="price sm:float-right font-bold">€200.00</div>
-                <h6 class="text-gray-800">Execution after work</h6>
-                <p class="mt-2">
-                  Thanks to our home office approach, we can serve you during the entire microservice even after work,
-                  if that suits you
-                  better. The following times are possible after close of business: sun - thu, 9 p.m. - 7 p.m.
-                </p>
-              </div>
-            </div>
-            <div class="flex mt-4">
-              <div class="sm:pt-1 mr-3 sm:mr-6 md:mr-8">
-                <input type="checkbox"
-                  class="appearance-none border border-gray-300 checked:bg-gray-400 checked:border-transparent ..." />
-              </div>
-              <div class="flex-grow">
-                <div class="price sm:float-right font-bold">€200.00</div>
-                <h6 class="text-gray-800">Execution after work</h6>
-                <p class="mt-2">
-                  Thanks to our home office approach, we can serve you during the entire microservice even after work,
-                  if that suits you
-                  better. The following times are possible after close of business: sun - thu, 9 p.m. - 7 p.m.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="border-b px-5 pt-10 pb-12 text-center">
-            <p class="text-gray-400 mb-4">This price can increase due to additional bookings</p>
-            <button mat-flat-button class="py-3 px-20 text-xl font-bold" color="accent">Buy now</button>
-          </div>
-        </div>
         <div class="border mt-5 px-5 py-10 text-center">
           <p class="font-bold mb-3">Do you have any special requirements?</p>
           <button mat-stroked-button class="py-2 px-12 text-lg font-bold text-gray-700">Send us</button>
         </div>
+        <div class="border mt-5 px-5 py-10 text-center">
+          <p class="font-bold mb-3">Comments section</p>
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <input type="text" name="username" placeholder="Username" ngModel
+              class="border border-gray-200 p-2 px-4 w-full  rounded-sm">
+            <input type="text" name="comment" placeholder="Comment" ngModel
+              class="border border-gray-200 my-2 p-2 px-4 w-full  rounded-sm">
+            <button mat-stroked-button class="py-2 px-12 text-lg font-bold text-gray-700">Comment</button>
+          </form>
+          <div *ngFor="let comment of comments" class="ll-content mt-8">
+            <blockquote>
+              <b>{{comment.username}}</b><br>
+              {{comment.comment}}
+            </blockquote>
+          </div>
+        </div>
       </div>
+      <button mat-stroked-button class="py-2 px-12 text-lg font-bold text-gray-700">Send us</button>
     </div>
   </div>
 </div>

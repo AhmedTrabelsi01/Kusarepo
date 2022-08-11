@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Subject } from 'rxjs';
 import { Contact } from '../models/products';
-
+import { DataService } from '../shared/data/service/data.service';
 @Component({
   selector: 'll-contact',
   templateUrl: './contact.component.html',
@@ -10,18 +9,19 @@ import { Contact } from '../models/products';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contact: DataService) { }
+  public comments = []
+  isLoaded: boolean;
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-  }
-  onSubmit(form: NgForm){
+  onSubmit(form: NgForm) {
     let contact: Contact = {
-      name:form.value.name,
-      number:parseInt(form.value.number),
-      email:form.value.email,
-      subject:form.value.subject,
-      core:form.value.core
+      name: form.value.name,
+      email: form.value.email,
+      subject: form.value.subject,
+      core: form.value.core
     }
-    console.log(contact)
+    this.contact.insertContact(contact).subscribe((res: any) => {
+    })
   }
 }
